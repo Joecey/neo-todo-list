@@ -6,4 +6,9 @@
 	.task-item {
 		@apply w-[95%] bg-green-700 shadow-2xl text-center h-16 mt-4 rounded-lg outline;
 	}
+
+	.side-icon {
+		@apply bg-green-500 h-32 w-32 flex flex-col justify-center items-center 
+		outline-black outline-1 outline;
+	}
 }

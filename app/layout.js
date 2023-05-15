@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className="flex">
 				<Sidebar />
-
+				
 				{children}
 			</body>
 		</html>
