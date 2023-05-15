@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.task-item {
+		@apply w-[95%] bg-green-700 shadow-2xl text-center h-16 mt-4 rounded-lg outline;
+	}
+}
