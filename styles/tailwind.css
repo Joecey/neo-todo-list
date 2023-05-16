@@ -9,6 +9,6 @@
 
 	.side-icon {
 		@apply bg-green-500 h-32 w-32 flex flex-col justify-center items-center 
-		outline-black outline-1 outline;
+		outline-black outline-1 outline hover:bg-slate-200;
 	}
 }

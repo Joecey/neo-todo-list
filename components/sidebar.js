@@ -24,10 +24,8 @@ export default function Sidebar() {
 
 function SidebarIcon(props) {
 	return (
-		<div id={props.id} className="side-icon">
-			<Link href={props.linkPath}>
-				<h1>{props.title}</h1>
-			</Link>
-		</div>
+		<Link href={props.linkPath} className="side-icon">
+			<h1>{props.title}</h1>
+		</Link>
 	);
 }

@@ -1,12 +1,11 @@
 import "../styles/globals.css";
 import Navbar from "../components/navbar";
 import "../styles/tailwind.css";
-import PocketBase from "pocketbase";
+import Task from "../components/taskItem";
 
 // here, we want async becasue we want the page to constantly update with new tasks being updated
 // additionally, to constantly update the tasks, we're going refetch the items from pocketbase on every request
 
-const pb = new PocketBase("http://127.0.0.1:8090");
 export const dynamic = "force-dynamic";
 
 async function getTasks() {
@@ -35,15 +34,6 @@ export default async function Tasks() {
 			{tasks?.map((task) => (
 				<Task id={task.id} title={task.title} info={task.info} />
 			))}
-		</div>
-	);
-}
-
-function Task(props) {
-	return (
-		<div id={props.id} className="task-item">
-			<h1>{props.title}</h1>
-			<h2>{props.info}</h2>
 		</div>
 	);
 }
