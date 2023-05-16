@@ -7,13 +7,14 @@ import PocketBase from "pocketbase";
 // additionally, to constantly update the tasks, we're going refetch the items from pocketbase on every request
 
 const pb = new PocketBase("http://127.0.0.1:8090");
+export const dynamic = "force-dynamic";
 
 async function getTasks() {
 	// const taskData = await pb.collection("tasks").getList(1, 30, {}); // page 1, showing 30 results per page
 
 	const results = await fetch(
 		"http://127.0.0.1:8090/api/collections/tasks/records?page=1&perPage=30&filter=(complete=False)",
-		{ cache: "no-store" }
+		{ cache: "no-cache" }
 	);
 	const taskData = await results.json();
 	return taskData?.items;
@@ -24,7 +25,6 @@ export default async function Tasks() {
 	// console.log(tasks);
 
 	// uncomment below to use as test data
-	// const tasks = [
 	// 	{ title: "test", info: "test1" },
 	// 	{ title: "test2", info: "test3" },
 	// ];
@@ -33,7 +33,7 @@ export default async function Tasks() {
 		<div className="bg-pink-100 w-full z-0 flex flex-col align-middle items-center">
 			<Navbar />
 			{tasks?.map((task) => (
-				<Task title={task.title} info={task.info} />
+				<Task id={task.id} title={task.title} info={task.info} />
 			))}
 		</div>
 	);
@@ -41,7 +41,7 @@ export default async function Tasks() {
 
 function Task(props) {
 	return (
-		<div className="task-item">
+		<div id={props.id} className="task-item">
 			<h1>{props.title}</h1>
 			<h2>{props.info}</h2>
 		</div>
