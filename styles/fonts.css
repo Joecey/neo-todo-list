@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500&family=Lexend+Mega:wght@800&display=swap");
+
+.task-title {
+	font-family: "Lexend Mega", sans-serif;
+}
+
+.info-text {
+	font-family: "Darker Grotesque", sans-serif;
+}

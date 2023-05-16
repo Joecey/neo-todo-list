@@ -1,11 +1,12 @@
 import "../styles/globals.css";
+import "../styles/tailwind.css";
 import Link from "next/link";
 
 export default function Sidebar() {
 	return (
 		<div
 			id="Sidebar"
-			className="top-0 left-0 h-screen w-32 m-0 flex flex-col bg-pink-300
+			className="top-0 left-0 h-screen w-32 m-0 flex flex-col bg-white
             outline-black outline-2 outline items-center z-50 shadow-lg  "
 		>
 			<nav>
@@ -17,6 +18,7 @@ export default function Sidebar() {
 					linkPath="/complete"
 					title="complete"
 				/>
+				<SidebarIcon id="about" linkPath="/about" title="about" />
 			</nav>
 		</div>
 	);
@@ -24,7 +26,7 @@ export default function Sidebar() {
 
 function SidebarIcon(props) {
 	return (
-		<Link href={props.linkPath} className="side-icon">
+		<Link href={props.linkPath} className="side-icon ">
 			<h1>{props.title}</h1>
 		</Link>
 	);

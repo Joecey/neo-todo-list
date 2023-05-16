@@ -16,7 +16,7 @@ async function getTasks() {
 	return taskData?.items;
 }
 
-export default async function Tasks() {
+export default async function Complete() {
 	const tasks = await getTasks();
 	// console.log(tasks);
 
@@ -26,7 +26,7 @@ export default async function Tasks() {
 	// ];
 
 	return (
-		<div className="bg-pink-100 w-full z-0 flex flex-col align-middle items-center">
+		<div className="bg-gradient-to-tr from-brutalPink-300 via-brutalRed-100 to-brutalPurple-200 w-full z-0 flex flex-col align-middle items-center">
 			<Navbar />
 			{tasks?.map((task) => (
 				<Task id={task.id} title={task.title} info={task.info} />
