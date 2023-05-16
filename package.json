@@ -8,8 +8,9 @@
   "dependencies": {
     "next": "latest",
     "pocketbase": "^0.14.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "react-live-clock": "^6.1.13"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
