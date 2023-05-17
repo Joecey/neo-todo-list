@@ -28,7 +28,6 @@ export default function Form() {
 
 		// need to use router so that new notes is fetched as soon as you submit
 		// yes, i know that it re-renders anyways upon switching back to page, but this will be redundancy
-		// TODO: clear fields on submit
 		// TODO: redirect to tasks on submit
 
 		router.refresh();

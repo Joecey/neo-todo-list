@@ -29,7 +29,12 @@ export default async function Complete() {
 		<div className="bg-gradient-to-tr from-brutalPink-300 via-brutalRed-100 to-brutalPurple-200 w-full z-0 flex flex-col align-middle items-center">
 			<Navbar />
 			{tasks?.map((task) => (
-				<Task id={task.id} title={task.title} info={task.info} />
+				<Task
+					id={task.id}
+					title={task.title}
+					info={task.info}
+					complete={task.complete}
+				/>
 			))}
 		</div>
 	);

@@ -13,10 +13,19 @@
 		outline-black outline-1 outline transition-all ease-in-out 
 		shadow-md hover:bg-brutalPurple-300;
 	}
+
+	.task-button {
+		@apply bg-white hover:bg-brutalYellow-200 w-auto h-auto text-black mr-4 text-xl opacity-0 group-hover:opacity-100 pl-2 pr-2  
+		rounded-lg outline outline-2 text-center items-center;
+	}
 }
 
 .shadow-solid-primary {
 	box-shadow: 8px 8px black;
+}
+
+.shadow-solid-secondary {
+	box-shadow: 4px 4px black;
 }
 
 .fade-in-start {
