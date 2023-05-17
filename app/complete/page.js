@@ -1,10 +1,7 @@
-import "../styles/globals.css";
-import Navbar from "../components/navbar";
-import "../styles/tailwind.css";
-import Task from "../components/taskItem";
-
-// here, we want async becasue we want the page to constantly update with new tasks being updated
-// additionally, to constantly update the tasks, we're going refetch the items from pocketbase on every request
+import "../../styles/globals.css";
+import Navbar from "../../components/navbar";
+import "../../styles/tailwind.css";
+import Task from "../../components/taskItem";
 
 export const dynamic = "force-dynamic";
 
@@ -12,14 +9,14 @@ async function getTasks() {
 	// const taskData = await pb.collection("tasks").getList(1, 30, {}); // page 1, showing 30 results per page
 
 	const results = await fetch(
-		"http://127.0.0.1:8090/api/collections/tasks/records?page=1&perPage=30&filter=(complete=False)",
+		"http://127.0.0.1:8090/api/collections/tasks/records?page=1&perPage=30&filter=(complete=True)",
 		{ cache: "no-cache" }
 	);
 	const taskData = await results.json();
 	return taskData?.items;
 }
 
-export default async function Tasks() {
+export default async function Complete() {
 	const tasks = await getTasks();
 	// console.log(tasks);
 
