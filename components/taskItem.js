@@ -66,7 +66,7 @@ export default function Task(props) {
 				<button
 					className={
 						completeState
-							? "opacity-0"
+							? "hidden"
 							: "task-button duration-200 info-text shadow-solid-secondary "
 					}
 					onClick={completeTask}

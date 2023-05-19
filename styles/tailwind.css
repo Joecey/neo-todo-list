@@ -10,8 +10,13 @@
 
 	.side-icon {
 		@apply bg-white h-32 w-32 flex flex-col justify-center items-center 
-		outline-black outline-1 outline transition-all ease-in-out 
-		shadow-md hover:bg-brutalPurple-300;
+		outline-black outline-2 outline transition-all ease-in-out 
+		shadow-md hover:bg-brutalPurple-300 relative text-black hover:text-white duration-200;
+	}
+
+	.side-icon-tooltip {
+		@apply text-black m-2 left-36 absolute w-auto min-w-max p-2
+		bg-brutalYellow-200 text-lg rounded-lg uppercase scale-0 transition-all duration-100 ease-in-out;
 	}
 
 	.task-button {
