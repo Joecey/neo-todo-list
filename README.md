@@ -41,14 +41,19 @@ As mentioned, this to-do list follows a neo-brtualist design pattern. I took hea
 At the moment, I don't have this project built on Vercel yet. However, if you would like to try this yourself:
 
 Clone the repository
+
 `git clone https://github.com/Joecey/neo-todo-list.git`
 
 Navigate to new directory and install required packages
+
 `cd neo-todo-list`
+
 `npm install`
 
 In one terminal, start Pocketbase
+
 `./pocketbase serve`
 
 And in a second terminal, run the to-do list
+
 `npm run dev`
