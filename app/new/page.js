@@ -1,6 +1,7 @@
 import "../../styles/globals.css";
 import Navbar from "../../components/navbar";
 import Form from "../../components/form";
+import PocketBase from "pocketbase";
 
 export default function New() {
 	return (

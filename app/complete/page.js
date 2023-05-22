@@ -2,6 +2,7 @@ import "../../styles/globals.css";
 import Navbar from "../../components/navbar";
 import "../../styles/tailwind.css";
 import Task from "../../components/taskItem";
+import PocketBase from "pocketbase";
 
 export const dynamic = "force-dynamic";
 

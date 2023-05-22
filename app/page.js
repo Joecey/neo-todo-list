@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Navbar from "../components/navbar";
 import "../styles/tailwind.css";
 import Task from "../components/taskItem";
+import PocketBase from "pocketbase";
 
 // here, we want async becasue we want the page to constantly update with new tasks being updated
 // additionally, to constantly update the tasks, we're going refetch the items from pocketbase on every request
