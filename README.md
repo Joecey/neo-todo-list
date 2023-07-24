@@ -5,7 +5,7 @@ A classic to-do list created with the popular "Neo-Brutalism" web design. This t
 -   Task list
 -   Five sidebar options; Create new task, Current tasks, Tasks due today, Completed tasks, and About page
 -   Date and time tracking
--   Weather tracking based on location (WIP)
+-   User authentication (WIP)
 -   Ability to delete and edit tasks (WIP)
 
 ## Tech Stack
