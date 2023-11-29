@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../styles/globals.css";
 import PocketBase from "pocketbase";
 import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -30,6 +31,7 @@ export default function Form() {
 		// yes, i know that it re-renders anyways upon switching back to page, but this will be redundancy
 		// TODO: redirect to tasks on submit
 
+		// redirect("/");
 		router.refresh();
 	}
 
@@ -39,13 +41,14 @@ export default function Form() {
 				<input
 					type="text"
 					placeholder="Enter title here"
+					className="textfield"
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 				/>
 
-				<input
-					type="text"
+				<textarea
 					placeholder="Enter information here"
+					className="textfield text-xl w-full"
 					value={info}
 					onChange={(e) => setInfo(e.target.value)}
 				/>

@@ -23,6 +23,14 @@
 		@apply bg-white hover:bg-brutalYellow-200 w-auto h-auto text-black mr-4 text-xl opacity-0 group-hover:opacity-100 pl-2 pr-2  
 		rounded-lg outline outline-2 text-center items-center;
 	}
+
+	.page-container {
+		@apply w-full z-0 flex flex-col align-middle items-center;
+	}
+
+	.textfield {
+		@apply outline m-2 text-3xl p-4 shadow-solid-secondary rounded-lg;
+	}
 }
 
 .shadow-solid-primary {

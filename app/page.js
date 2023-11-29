@@ -1,8 +1,8 @@
 import "../styles/globals.css";
-import Navbar from "../components/navbar";
 import "../styles/tailwind.css";
 import Task from "../components/taskItem";
 import PocketBase from "pocketbase";
+import BasePageWrapper from "../components/basePageWrapper";
 
 // here, we want async becasue we want the page to constantly update with new tasks being updated
 // additionally, to constantly update the tasks, we're going refetch the items from pocketbase on every request
@@ -30,8 +30,7 @@ export default async function Tasks() {
 	// ];
 
 	return (
-		<div className="bg-gradient-to-tr from-brutalPink-300 via-brutalRed-100 to-brutalPurple-200 w-full z-0 flex flex-col align-middle items-center">
-			<Navbar />
+		<div className="page-container">
 			{tasks?.map((task) => (
 				<Task
 					id={task.id}

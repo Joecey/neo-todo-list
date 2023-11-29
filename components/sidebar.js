@@ -7,7 +7,7 @@ import { AiOutlineExclamation } from "react-icons/ai";
 import { GoCheck } from "react-icons/go";
 import { BiInfoCircle } from "react-icons/bi";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
 	return (
 		<div
 			id="Sidebar"
@@ -20,30 +20,35 @@ export default function Sidebar() {
 					linkPath="/new"
 					icon={<IoIosAddCircle size="32" />}
 					userRequired={true}
+					loggedIn={props.loggedIn}
 				/>
 				<SidebarIcon
 					title="tasks"
 					linkPath="/"
 					icon={<GoGrabber size="40" />}
-					userRequired={false}
+					userRequired={true}
+					loggedIn={props.loggedIn}
 				/>
 				<SidebarIcon
 					title="tasks due"
 					linkPath="/today"
 					icon={<AiOutlineExclamation size="36" />}
 					userRequired={true}
+					loggedIn={props.loggedIn}
 				/>
 				<SidebarIcon
 					title="completed"
 					linkPath="/complete"
 					icon={<GoCheck size="32" />}
 					userRequired={true}
+					loggedIn={props.loggedIn}
 				/>
 				<SidebarIcon
 					title="About"
 					linkPath="/about"
 					icon={<BiInfoCircle size="32" />}
 					userRequired={false}
+					loggedIn={props.loggedIn}
 				/>
 			</nav>
 		</div>
@@ -52,8 +57,7 @@ export default function Sidebar() {
 
 function SidebarIcon(props) {
 	// placeholder for now, just experiemting with hiding sidebars icons
-	const userLoggedIn = true;
-	if (props.userRequired && !userLoggedIn) {
+	if (props.userRequired && !props.loggedIn) {
 		return (
 			<Link href={props.linkPath} className="hidden">
 				{props.icon}

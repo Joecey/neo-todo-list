@@ -1,5 +1,5 @@
 import "../../styles/globals.css";
-import Navbar from "../../components/navbar";
+import BasePageWrapper from "../../components/basePageWrapper";
 import "../../styles/tailwind.css";
 import Task from "../../components/taskItem";
 import PocketBase from "pocketbase";
@@ -27,8 +27,7 @@ export default async function Complete() {
 	// ];
 
 	return (
-		<div className="bg-gradient-to-tr from-brutalPink-300 via-brutalRed-100 to-brutalPurple-200 w-full z-0 flex flex-col align-middle items-center">
-			<Navbar />
+		<div className="page-container">
 			{tasks?.map((task) => (
 				<Task
 					id={task.id}
