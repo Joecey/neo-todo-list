@@ -2,13 +2,13 @@ import "../../styles/globals.css";
 import BasePageWrapper from "../../components/basePageWrapper";
 import "../../styles/tailwind.css";
 import Task from "../../components/taskItem";
-import PocketBase from "pocketbase";
+
+import { pb } from "../../utils/pocketbase";
 
 export const dynamic = "force-dynamic";
 
 async function getTasks() {
 	// const taskData = await pb.collection("tasks").getList(1, 30, {}); // page 1, showing 30 results per page
-
 	const results = await fetch(
 		"http://127.0.0.1:8090/api/collections/tasks/records?page=1&perPage=30&filter=(complete=True)",
 		{ cache: "no-cache" }
@@ -28,6 +28,7 @@ export default async function Complete() {
 
 	return (
 		<div className="page-container">
+			<h1>hello</h1>
 			{tasks?.map((task) => (
 				<Task
 					id={task.id}

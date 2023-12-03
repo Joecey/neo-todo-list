@@ -4,13 +4,26 @@ import "../styles/globals.css";
 import Clock from "react-live-clock";
 import "../styles/fonts.css";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { pb } from "../utils/pocketbase";
 
 export default function BasePageWrapper({ loggedIn, setLoggedIn }) {
 	const handleLogOut = () => {
+		pb.authStore.clear();
 		setLoggedIn(false);
 	};
 
+	const handleNewAuthData = () => {
+		return pb.authStore.baseModel === null ? "" : pb.authStore.model.id; // i think this is the key!
+	};
+
+	useEffect(() => {
+		setUserId(handleNewAuthData());
+	}, [loggedIn]);
+
 	const logoutButtonOpacity = loggedIn ? "opacity-100" : "opacity-0";
+
+	const [userId, setUserId] = useState("");
 
 	return (
 		<div
@@ -25,6 +38,7 @@ export default function BasePageWrapper({ loggedIn, setLoggedIn }) {
 					className="task-title uppercase text-4xl ml-4"
 				/>
 			</div>
+			<h2>{userId}</h2>
 			<div>
 				<Link
 					href={"/"}
